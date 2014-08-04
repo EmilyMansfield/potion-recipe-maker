@@ -1,6 +1,6 @@
 Animal:		common
 Ant:		common
-Basilisk:	very rare
+Basilisk:	very_rare
 Bat:		common
 Bear:		common
 Beetle:		common
@@ -10,7 +10,7 @@ Bugbear:	uncommon
 Bull:		common
 Cat:		common
 Centaur:	rare
-Chimera:	very rare
+Chimera:	very_rare
 Cow:		common
 Crocodile:	uncommon
 Cyclops:	rare
@@ -44,41 +44,41 @@ Human:		uncommon
 Hydra:		rare
 Imp:		rare
 Kobold:		uncommon
-Kraken:		very rare
-Leprechaun:	very rare
+Kraken:		very_rare
+Leprechaun:	very_rare
 Lizard:		common
 Lizard-Man: 	common
-Manticore:	very rare
-Medusa:		very rare
+Manticore:	very_rare
+Medusa:		very_rare
 Minotaur:	rare
 Mouse:		common
 Naga:		rare
-Nightmare:	very rare
+Nightmare:	very_rare
 Nixie:		rare
 Ogre:		rare
-Pegasus:	very rare
+Pegasus:	very_rare
 Phoenix:	rare
 Pixie:		rare
 Rat:		common
 Roc:		rare
 Roper:		rare
 Rust Monster:	rare
-Satyr:		very rare
+Satyr:		very_rare
 Scorpion:	common
 Serpent:	common
 Shark:		uncommon
 Snake:		uncommon
 Snake:		common
-Sphinx:		very rare
+Sphinx:		very_rare
 Spider:		common
 Sprite:		rare
-Succubus:	very rare
+Succubus:	very_rare
 Sylvan:		rare
-Titan:		very rare
+Titan:		very_rare
 Toad:		common
 Troglodyte:	uncommon
 Troll:		rare
-Unicorn:	very rare
+Unicorn:	very_rare
 Vampire:	rare
 Weasel:		common
 Werebear:	rare

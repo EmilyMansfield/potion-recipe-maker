@@ -3,7 +3,7 @@
 
   def initialize(name, properties)
     @name = name
-    @properties = properties
+    @properties = properties.split
   end
 end
 
@@ -17,19 +17,6 @@ class Creature
 end
 
 class RecipeBook
-  private
- 
-  def build_cumulative_rarity
-    rarity_hash = { 'common' => 8.0, 'uncommon' => 4.0, 'rare' => 2.0, 'very rare' => 1.0 }
-    @cumulative_rarity = []
-    @creatures.each { |x| @cumulative_rarity << rarity_hash[x.rarity] }
-    sum = 0.0
-    @cumulative_rarity.map! { |x| sum += x }
-    @cumulative_rarity.map! { |x| x / sum }
-  end
-  
-  public
-  
   def initialize
     @parts = IO.readlines('data/creatureParts.txt')
     @parts.map! do |x|
@@ -51,16 +38,16 @@ class RecipeBook
     recipe = []
     (1..num_ingredients).each do |x|
       index = prng.rand(1.0)
-      unless included_creatures.empty?
+      if included_creatures.empty?
+        creature = @creatures[@cumulative_rarity.find_index { |y| y > index }]
+      else
         creature = @creatures.find { |x| x.name == included_creatures.last }
         included_creatures.pop
-      else
-        creature = @creatures[@cumulative_rarity.find_index { |y| y > index }]
       end
 
       part = @parts.sample
       amount = 5
-      unit = 'g'
+      unit = 'g of '
       if part.properties.include? 'gaseous'
         unit = ''
         amount = 'some'
@@ -77,6 +64,17 @@ class RecipeBook
       recipe << " - #{amount} #{unit}#{creature.name} #{part.name}"
     end
     recipe
+  end
+  
+  private
+ 
+  def build_cumulative_rarity
+    rarity_hash = { common: 8.0, uncommon: 4.0, rare: 2.0, very_rare: 1.0 }
+    @cumulative_rarity = []
+    @creatures.each { |x| @cumulative_rarity << rarity_hash[x.rarity.intern] }
+    sum = 0.0
+    @cumulative_rarity.map! { |x| sum += x }
+    @cumulative_rarity.map! { |x| x / sum }
   end
 end
 
