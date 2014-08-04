@@ -1,0 +1,13 @@
+Bile:		fluid
+Blood:		fluid
+Bone:		solid
+Extract:	fluid
+Eyes:		countable
+Skin:		solid
+Sweat:		fluid
+Salt:		solid
+Scent:		gaseous
+Spit:		fluid
+Tears:		fluid
+Teeth:		countable
+Urine:		fluid
