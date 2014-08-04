@@ -18,7 +18,7 @@ Combines the name of a creature from `creatures.txt` with a body part/ingredient
 
     creature_name:  rarity
   
-where `rarity` takes the value `common`, `uncommon`, `rare`, or `very rare`. Rarity is weighted according to powers of 2, so `rare` is twice as likely to occur as `very rare` and 4 times as unlikely to occur as `common`.
+where `rarity` takes the value `common`, `uncommon`, `rare`, or `very_rare`. Rarity is weighted according to powers of 2, so `rare` is twice as likely to occur as `very_rare` and 4 times as unlikely to occur as `common`.
 
 Syntax for `creatureParts.txt` is
 
@@ -39,4 +39,4 @@ Creatures can be guaranteed to occur by entering a comma separated list of them 
      - 100 ml of Dragon Bile
      - 60 ml of Cow Bile
 
-The whitespace is irrelevant, so `Cow, Dragon` is the same as `Cow,Dragon` and `Dragon,        Cow`.
+The whitespace is irrelevant, so `Cow, Dragon` is the same as `Cow,Dragon`.
