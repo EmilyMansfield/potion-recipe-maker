@@ -32,7 +32,6 @@ class RecipeBook
     build_cumulative_rarity
   end
 
-  
   def make_recipe(num_ingredients, included_creatures=[])
     prng = Random.new
     recipe = []
@@ -64,6 +63,10 @@ class RecipeBook
       recipe << " - #{amount} #{unit}#{creature.name} #{part.name}"
     end
     recipe
+  end
+  
+  def creature_names
+    @creatures.map { |x| x.name }
   end
   
   private
