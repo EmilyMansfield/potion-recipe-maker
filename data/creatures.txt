@@ -1,0 +1,93 @@
+Animal:		common
+Ant:		common
+Basilisk:	very rare
+Bat:		common
+Bear:		common
+Beetle:		common
+Boar:		common
+Brownie:	uncommon
+Bugbear:	uncommon
+Bull:		common
+Cat:		common
+Centaur:	rare
+Chimera:	very rare
+Cow:		common
+Crocodile:	uncommon
+Cyclops:	rare
+Dark-Elf:	uncommon
+Demon:		rare
+Devil:		rare
+Doppelganger:	rare
+Dragon:		rare
+Drake:		uncommon
+Dryad:		rare
+Dwarf:		uncommon
+Elf:		uncommon
+Ettin:		rare
+Frog:		common
+Gargoyle:	rare
+Ghoul:		uncommon
+Giant-Spider: 	common
+Giant:		uncommon
+Gnoll:		uncommon
+Gnome:		uncommon
+Goblin:		common
+Gremlin:	rare
+Griffon:	rare
+Hag:		uncommon
+Halfling:	uncommon
+Harpy:		rare
+Hippogriff:	rare
+Hobgoblin:	uncommon
+Horse:		common
+Human:		uncommon
+Hydra:		rare
+Imp:		rare
+Kobold:		uncommon
+Kraken:		very rare
+Leprechaun:	very rare
+Lizard:		common
+Lizard-Man: 	common
+Manticore:	very rare
+Medusa:		very rare
+Minotaur:	rare
+Mouse:		common
+Naga:		rare
+Nightmare:	very rare
+Nixie:		rare
+Ogre:		rare
+Pegasus:	very rare
+Phoenix:	rare
+Pixie:		rare
+Rat:		common
+Roc:		rare
+Roper:		rare
+Rust Monster:	rare
+Satyr:		very rare
+Scorpion:	common
+Serpent:	common
+Shark:		uncommon
+Snake:		uncommon
+Snake:		common
+Sphinx:		very rare
+Spider:		common
+Sprite:		rare
+Succubus:	very rare
+Sylvan:		rare
+Titan:		very rare
+Toad:		common
+Troglodyte:	uncommon
+Troll:		rare
+Unicorn:	very rare
+Vampire:	rare
+Weasel:		common
+Werebear:	rare
+Werecat:	rare
+Wererat:	rare
+Werewolf:	rare
+Wolf:		common
+Worm:		common
+Wyrm:		rare
+Wyvern:		rare
+Yeti:		rare
+Zombie:		common
