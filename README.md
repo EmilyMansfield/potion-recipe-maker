@@ -1,4 +1,4 @@
-potion-recipe-maker
+Potion Recipe Maker
 ===================
 
 Randomly generate potion recipes for tabletop roleplaying games. Generates recipes such as
@@ -10,6 +10,11 @@ Randomly generate potion recipes for tabletop roleplaying games. Generates recip
     - 50 ml of Titan Extract
 
 You can also guarantee that a given set of creature types will appear in the potion; Potions of Dragon Control should contain something from a dragon for example.
+
+User Interface
+==============
+
+This program comes with two different user interfaces; `potion_recipe_maker.rb` contains a command line interface (which is referred to throughout this file), and `potion_recipe_maker_gui.rb` contains a graphical user interface. The GUI version requires `FXRuby` to run, the CLI version has no dependencies.
 
 Data Files
 ==========
