@@ -1,4 +1,4 @@
-class CreaturePart
+﻿class CreaturePart
   attr_reader :name, :properties
 
   def initialize(name, properties)
