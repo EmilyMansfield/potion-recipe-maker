@@ -1,19 +1,19 @@
 class CreaturePart
-	attr_reader :name, :properties
+  attr_reader :name, :properties
 
-	def initialize(name, properties)
-		@name = name
-		@properties = properties
-	end
+  def initialize(name, properties)
+    @name = name
+    @properties = properties
+  end
 end
 
 class Creature
-	attr_reader :name, :rarity
+  attr_reader :name, :rarity
 
-	def initialize(name, rarity)
-		@name = name
-		@rarity = rarity
-	end
+  def initialize(name, rarity)
+    @name = name
+    @rarity = rarity
+  end
 end
 
 class RecipeBook
