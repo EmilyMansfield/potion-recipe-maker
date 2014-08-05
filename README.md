@@ -21,9 +21,17 @@ Data Files
 
 Combines the name of a creature from `creatures.txt` with a body part/ingredient type from `creatureParts.txt`. Syntax for `creatures.txt` is
 
-    creature_name:  rarity
+    creature_name:  rarity ![item1 item2 ...]
   
-where `rarity` takes the value `common`, `uncommon`, `rare`, or `very_rare`. Rarity is weighted according to powers of 2, so `rare` is twice as likely to occur as `very_rare` and 4 times as unlikely to occur as `common`.
+where `rarity` takes the value `common`, `uncommon`, `rare`, or `very_rare`. Rarity is weighted according to powers of 2, so `rare` is twice as likely to occur as `very_rare` and 4 times as unlikely to occur as `common`. The `!` is optional and is for denoting the list (which is also optional) as a blacklist instead of a whitelist. If a whitelist is given then only creature parts in the list can be used to make each ingredient. If a blacklist is given then only parts *not* inside the list can be used to make each ingredient. For example,
+
+    Cyclops: rare [Eyes]
+    
+will stop any ingredients involving a Cyclops except Cyclops Eyes from occuring, and
+
+    Worm: common ![Teeth]
+
+will stop Worm Teeth from occuring.
 
 Syntax for `creatureParts.txt` is
 
