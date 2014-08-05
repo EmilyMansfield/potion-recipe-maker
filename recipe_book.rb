@@ -3,17 +3,18 @@
 
   def initialize(name, properties)
     @name = name
-    @properties = properties.split
+    @properties = properties
   end
 end
 
 class Creature
-  attr_reader :name, :rarity, :properties
+  attr_reader :name, :rarity, :list, :blacklist
 
-  def initialize(name, rarity, properties = [])
+  def initialize(name, rarity, list = [], blacklist = false)
     @name = name
     @rarity = rarity
-    @properties = properties
+    @list = list
+    @blacklist = blacklist
   end
 end
 
@@ -29,11 +30,14 @@ class RecipeBook
     
     @creatures = IO.readlines('data/creatures.txt')
     @creatures.map! do |x|
-      partition = x.to_s.partition(/:\s*/)
-      name = partition[0]
-      properties = partition[2].split
-      rarity = properties.find { |x| x == 'common' || x == 'uncommon' || x == 'rare' || x == 'very_rare' }
-      Creature.new(name, rarity, properties)
+      tokens = x.match(/(?<name>\w+):\s*(?<rarity>\w+)\s+(?:(?<blacklist>!)?\[(?<items>.*?)\])?\n?/)
+      name = tokens['name']
+      rarity = tokens['rarity']
+      blacklist = tokens['blacklist'] ? true : false
+      list = tokens['items']
+      list &&= list.split
+      
+      Creature.new(name, rarity, list, blacklist)
     end
     
     build_cumulative_rarity
@@ -51,7 +55,15 @@ class RecipeBook
         included_creatures.pop
       end
 
-      part = @parts.sample
+      if creature.list && creature.blacklist
+        part = @parts.sample
+        part = @parts.sample while creature.list.include? part.name
+      elsif creature.list && !creature.blacklist
+        sample = creature.list.sample
+        part = @parts.find { |x| x.name == sample }
+      else
+        part = @parts.sample
+      end
       amount = 5
       unit = 'g of '
       if part.properties.include? 'gaseous'
