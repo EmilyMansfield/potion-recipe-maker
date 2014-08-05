@@ -8,11 +8,12 @@
 end
 
 class Creature
-  attr_reader :name, :rarity
+  attr_reader :name, :rarity, :properties
 
-  def initialize(name, rarity)
+  def initialize(name, rarity, properties = [])
     @name = name
     @rarity = rarity
+    @properties = properties
   end
 end
 
@@ -21,14 +22,20 @@ class RecipeBook
     @parts = IO.readlines('data/creatureParts.txt')
     @parts.map! do |x|
       partition = x.to_s.partition(/:\s*/)
-      CreaturePart.new(partition[0], partition[2].chomp)
+      name = partition[0]
+      properties = partition[2].split
+      CreaturePart.new(name, properties)
     end
     
     @creatures = IO.readlines('data/creatures.txt')
     @creatures.map! do |x|
       partition = x.to_s.partition(/:\s*/)
-      Creature.new(partition[0], partition[2].chomp)
+      name = partition[0]
+      properties = partition[2].split
+      rarity = properties.find { |x| x == 'common' || x == 'uncommon' || x == 'rare' || x == 'very_rare' }
+      Creature.new(name, rarity, properties)
     end
+    
     build_cumulative_rarity
   end
 
